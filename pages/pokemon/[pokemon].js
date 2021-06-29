@@ -19,7 +19,7 @@ export async function getStaticPaths() {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
     const pokemon = await res.json()
 
-    let paths = pokemon.results.map((p) => {
+    let paths = pokemon.results.map(p => {
         return `/pokemon/${p.name}`
     })
 
